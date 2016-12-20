@@ -1,4 +1,4 @@
-# Spring Boot Demo
+# Spring Boot Security Fix ConcurrentSessionFilter
 
 ## Prerequisites
 
