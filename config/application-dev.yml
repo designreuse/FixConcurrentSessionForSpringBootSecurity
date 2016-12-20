@@ -1,0 +1,3 @@
+spring.thymeleaf.cache: false
+prop.hello: Hello
+server.session-timeout: 10 #seconds

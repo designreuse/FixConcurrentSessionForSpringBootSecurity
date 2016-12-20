@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example</title>
+    </head>
+    <body>
+        <div>ROLE_ADMIN = username:<strong>admin</strong>, password=<strong>admin</strong></div>
+        <div>ROLE_USER = username:<strong>user</strong>, password=<strong>user</strong></div>
+        <br/>
+        <div th:if="${param.error}">
+            <div th:if="${param.error[0]=='1'}">
+                <strong>Invalid username and password.</strong>
+            </div>
+            <div th:if="${param.error[0]=='2'}">
+                <strong>User disabled</strong>
+            </div>
+            <div th:if="${param.error[0]=='3'}">
+                <strong>Max session for this user</strong>
+            </div>
+            <div th:if="${param.error[0]==''}">
+                <strong>General Error</strong>
+            </div>
+        </div>
+        <div th:if="${param.logout}">
+            <strong>You have been logged out.</strong>
+        </div>
+        <div th:if="${param.expiredUrl}">
+            <strong>expiredUrl = Max session</strong>
+        </div>
+        <div th:if="${param.invalidSessionUrl}">
+            <strong>invalidSessionUrl = Sessione scaduta</strong>
+        </div>
+        <br/>
+        <form th:action="@{/login}" method="post">
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+    </body>
+</html>
