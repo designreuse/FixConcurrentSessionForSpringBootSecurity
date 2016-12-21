@@ -9,8 +9,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://massynet@bitbucket.org/massynet/spring-boot-demo.git` this repository
-* `cd spring-boot-demo`
+* `git clone https://github.com/MassimoScattarella/FixConcurrentSessionForSpringBootSecurity.git`
+* `cd <PROJECT_PATH>`
 * `mvn clean`
 * `mvn install`
 
